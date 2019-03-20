@@ -1,0 +1,33 @@
+{
+  "name": "react-socket-io-client",
+  "version": "0.0.1",
+  "description": "Socket.IO client component for React and React Native",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "cm": "git-cz"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/m860/react-socket-io-client.git"
+  },
+  "keywords": [
+    "react",
+    "react-socket"
+  ],
+  "author": "m860",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/m860/react-socket-io-client/issues"
+  },
+  "homepage": "https://github.com/m860/react-socket-io-client#readme",
+  "devDependencies": {
+    "commitizen": "^3.0.7",
+    "cz-conventional-changelog": "^2.1.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}

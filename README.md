@@ -1,2 +1,3 @@
 # react-socket-io-client
-React Socket.IO client component
+
+Socket.IO client component for React and React Native
