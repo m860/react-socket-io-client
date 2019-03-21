@@ -10,3 +10,26 @@ Socket.IO client component for React and React Native
 <!-- endbadge -->
 [![Build Status](https://travis-ci.org/m860/react-socket-io-client.svg?branch=master)](https://travis-ci.org/m860/react-socket-io-client)
 [![Coverage Status](https://coveralls.io/repos/github/m860/react-socket-io-client/badge.svg?branch=master)](https://coveralls.io/github/m860/react-socket-io-client?branch=master)
+
+## Install
+
+```
+$ npm i react-socket-io-client --save
+```
+
+## Simple Usage
+
+```
+import * as React from "react"
+import {SocketConnect,SocketEvent} from "react-socket-io-client"
+
+class Example extends React.Component{
+    render(){
+        return (
+            <SocketConnect url={"YOUR SOCKET URL"}>
+                <ScoketEvent name={"YOUR EVENT"} callback={()=>null}></ScoketEvent>
+            </SocketConnect>
+        );
+    }
+}
+```
