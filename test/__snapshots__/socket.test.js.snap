@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SocketConnect/> 1`] = `"socket is connected"`;
+
+exports[`<SocketConnect/> 2`] = `null`;
+
+exports[`<SocketConnect/> 3`] = `null`;

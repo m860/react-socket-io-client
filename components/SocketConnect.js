@@ -70,6 +70,10 @@ export default class SocketConnect extends React.Component<SocketConnectProps, S
         };
     }
 
+    getSocketInstance() {
+        return this._socket;
+    }
+
     render() {
         if (this.state.connected) {
             return this.props.children;
