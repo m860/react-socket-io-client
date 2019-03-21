@@ -29,7 +29,7 @@
     "@babel/preset-env": "^7.4.1",
     "@babel/preset-flow": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
-    "@m860/react-docgen-markdown": "0.0.1",
+    "@m860/react-docgen-markdown": "1.0.1",
     "@types/jest": "^24.0.11",
     "babel-jest": "^24.5.0",
     "commitizen": "^3.0.7",
