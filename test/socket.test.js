@@ -4,14 +4,16 @@ import http from "http"
 import renderer from "react-test-renderer"
 import SocketConnect from "../components/SocketConnect";
 import SocketEvent from "../components/SocketEvent";
+import {withSocket} from "../index";
 
-jest.setTimeout(10 * 1000);
+jest.setTimeout(20 * 1000);
 
-let httpServer, socketServer, httpServerAddr;
+let httpServer, socketServer, url;
 
 beforeAll((done) => {
     httpServer = http.createServer();
-    httpServerAddr = httpServer.listen().address();
+    const addr = httpServer.listen().address();
+    url = `http://0.0.0.0:${addr.port}`;
     socketServer = io(httpServer);
     done();
 });
@@ -23,7 +25,6 @@ afterAll((done) => {
 });
 
 test(`<SocketConnect/>`, (done) => {
-    const url = `http://0.0.0.0:${httpServerAddr.port}`;
     let component, tree;
     const connectCallback = jest.fn(() => {
         tree = component.toJSON();
@@ -51,7 +52,6 @@ test(`<SocketConnect/>`, (done) => {
 });
 
 test(`<SocketEvent/>`, (done) => {
-    const url = `http://0.0.0.0:${httpServerAddr.port}`;
     const name = "abc";
     const message = "hello";
     let component;
@@ -76,6 +76,46 @@ test(`<SocketEvent/>`, (done) => {
                        }}>
             <SocketEvent name={name} callback={nameCallback}/>
             <SocketEvent name={ignore} callback={ignoreCallback}/>
+        </SocketConnect>
+    )
+});
+
+test("withSocket", (done) => {
+    const name = "hello";
+    const message = "world";
+    let testRef = null;
+    let component = null;
+    const serverCallback = jest.fn((data) => {
+        expect(data).toBe(message);
+        expect(typeof testRef.hello).toBe("function");
+        component.unmount();
+        setTimeout(() => {
+            done();
+        }, 100);
+    });
+    socketServer.on("connect", (socket) => {
+        socket.on(name, serverCallback);
+    });
+
+    class Test extends React.Component {
+        render() {
+            return null;
+        }
+
+        hello() {
+        }
+
+        componentDidMount() {
+            expect(this.props.socket).not.toBeNull();
+            expect(this.props.socket).not.toBeUndefined();
+            this.props.socket.emit(name, message);
+        }
+    }
+
+    const SocketTest = withSocket(Test);
+    component = renderer.create(
+        <SocketConnect url={url}>
+            <SocketTest ref={ref => testRef = ref}/>
         </SocketConnect>
     )
 });
