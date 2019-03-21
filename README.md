@@ -67,3 +67,16 @@ class Example extends React.Component{
 
 
 <!--end react doc markdown-->
+
+### withSocket
+
+如果要在组件内通过`props.socket`访问socket实例可以使用`withSocket`来实现.前提是组件必须是`<SocketConnect>`的子组件,
+
+```
+import {withSocket} from "react-socket-io-client"
+
+@withSocket
+class Test extends React.Component{
+    ...
+}
+```
