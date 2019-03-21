@@ -5,6 +5,8 @@ import renderer from "react-test-renderer"
 import SocketConnect from "../components/SocketConnect";
 import SocketEvent from "../components/SocketEvent";
 
+jest.setTimeout(10 * 1000);
+
 let httpServer, socketServer, httpServerAddr;
 
 beforeAll((done) => {
