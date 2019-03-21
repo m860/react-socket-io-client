@@ -10,3 +10,4 @@ test
 jest.config.js
 .releaserc
 .coveralls.yml
+.badge.json
