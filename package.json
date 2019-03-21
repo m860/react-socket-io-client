@@ -7,7 +7,7 @@
     "test": "jest",
     "cm": "git-cz",
     "publish": "semantic-release && cat./coverage/lcov.info|coveralls",
-    "build:doc":"react-docgen-markdown build components --output doc && react-docgen-markdown readme README.md --src doc --table-content"
+    "build:doc": "react-docgen-markdown build components --output doc && react-docgen-markdown readme README.md --src doc --table-content"
   },
   "repository": {
     "type": "git",
