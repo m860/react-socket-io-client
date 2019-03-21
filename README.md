@@ -33,3 +33,39 @@ class Example extends React.Component{
     }
 }
 ```
+
+<!--begin react doc markdown-->
+## Table Content
+
+- [SocketConnect](#socketconnect)
+- [SocketEvent](#socketevent)
+
+# SocketConnect
+
+
+
+
+## props
+
+- `url` **string** 
+- `options?` **Object** 
+- `event?` **signature** 
+
+## methods
+
+- `getSocketInstance` **()=>void**
+
+
+# SocketEvent
+
+
+
+
+## props
+
+- `name` **string** 
+- `callback` **Function** 
+
+
+
+<!--end react doc markdown-->

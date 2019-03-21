@@ -26,16 +26,27 @@ export default class SocketConnect extends React.Component<SocketConnectProps, S
     };
 
     _socket = null;
+    /**
+     * @private
+     */
     _onConnect = () => {
         this.setState({
             connected: true
         });
     };
+    /**
+     *
+     * @private
+     */
     _onDisconnect = () => {
         this.setState({
             connected: false
         });
     };
+    /**
+     *
+     * @private
+     */
     _bindEvent = () => {
         if (this._socket) {
             this._socket.on("connect", this._onConnect);
@@ -48,6 +59,10 @@ export default class SocketConnect extends React.Component<SocketConnectProps, S
         }
 
     };
+    /**
+     *
+     * @private
+     */
     _unbindEvent = () => {
         if (this._socket) {
             this._socket.off("connect", this._onConnect);
@@ -70,6 +85,9 @@ export default class SocketConnect extends React.Component<SocketConnectProps, S
         };
     }
 
+    /**
+     * 获取socket实例
+     */
     getSocketInstance() {
         return this._socket;
     }
