@@ -9,3 +9,4 @@ test
 .gitignore
 jest.config.js
 .releaserc
+.coveralls.yml
