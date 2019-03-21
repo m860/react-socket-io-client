@@ -51,7 +51,7 @@ test(`<SocketConnect/>`, (done) => {
 });
 
 test(`<SocketEvent/>`, (done) => {
-    const url = `http://[${httpServerAddr.address}]:${httpServerAddr.port}`;
+    const url = `http://0.0.0.0:${httpServerAddr.port}`;
     const name = "abc";
     const message = "hello";
     let component;
