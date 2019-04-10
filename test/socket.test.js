@@ -2,9 +2,9 @@ import * as React from "react"
 import io from "socket.io"
 import http from "http"
 import renderer from "react-test-renderer"
-import SocketConnect from "../components/SocketConnect";
-import SocketEvent from "../components/SocketEvent";
-import {withSocket} from "../index";
+import {SocketConnect} from "../components/index";
+import {SocketEvent} from "../components/index";
+import {withSocket} from "../components/index";
 
 jest.setTimeout(20 * 1000);
 
