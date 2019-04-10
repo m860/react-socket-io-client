@@ -12,3 +12,5 @@ jest.config.js
 .coveralls.yml
 .badge.json
 doc
+components
+index.js
